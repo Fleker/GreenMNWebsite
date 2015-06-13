@@ -1,0 +1,13 @@
+{% if request.logged_in? %}
+
+{% include "supporter_nav" %}
+
+{% else %}
+
+<ul class="supporter-nav logged-off">
+  <li class="facebook"><a href="{{ request.facebook_connect_url }}"><i class="icon-facebook"></i> <span class="menu-label">Sign in with Facebook</span></a></li>
+  <li class="twitter"><a href="{{ request.twitter_connect_url }}"><i class="icon-twitter"></i> <span class="menu-label">Sign in with Twitter</span></a></li>
+  <li class="mail"><a href="/login"><i class="icon-mail"></i> <span class="menu-label">Sign in with Email</span></a></li>
+</ul>
+
+{% endif %}

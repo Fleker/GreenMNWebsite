@@ -1,0 +1,10 @@
+{% for child in site.root_nav_pages %}
+<div class="span4">
+  <a href="{{ child.url }}">{{ child.name }}</a>
+</div>
+{% for child2 in child.nav_children %}
+<div class="span4">
+  <a href="{{ child2.url }}">{{ child2.name }}</a>
+</div>
+{% endfor %}
+{% endfor %}

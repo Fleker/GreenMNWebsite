@@ -1,0 +1,40 @@
+<div id="content">
+	{% if page.is_homepage? == false %}
+  <div id="intro" class="intro clearfix">
+    <div class="text-content">
+      {{ page.basic.content }}
+    </div>
+    <!-- note: deleted the "Do you like this page" content ITJ-->
+  </div>
+	{% else %}
+  <div id="intro" class="clearfix">
+    <div class="text-content">
+      {% if page.parent.headline.size %}
+      <h2 class="headline">{{ page.parent.name }}</h2>
+      {% else %}
+      	{% if page.headline.size %}
+      	<h2 class="headline">{{ page.name }}</h2>
+      	{% endif %}
+      {% endif %}
+      {{ page.basic.content }}
+    </div>
+    <!-- note: deleted the "Do you like this page" content ITJ-->
+  </div>  
+  {% endif %}
+  
+  
+  {% if page.tags_count > 0 %}
+  <div class="page-tags">
+    {% include "page_tags" with page %}
+  </div>
+  {% endif %}
+
+  {% if page.is_homepage? == true and site.page_tags contains "homepage" %}
+    {% tag "homepage" with "homepage_widget" %}
+  {% endif %}
+
+  {% if page.show_stream? %}
+  {% include "page_stream" %}
+  {% endif %}
+
+</div>

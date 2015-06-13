@@ -1,0 +1,172 @@
+.page-pages-show-donation-wide {
+  .red {
+    background-color: rgba(255,255, 255,0.9);
+    border-radius: 5px;
+    color: #FF0000;
+    display: inline-block;
+    padding: 3px 5px;
+    width: 100%;
+  }
+  .donation_form .form-wrap {
+    margin-bottom: 1.25em;
+  }
+  .form-progress-indicator {
+    width: 130%;
+    left: -15%;
+    position: relative;
+  }
+  .progress-indicator-stages {
+    list-style-type: none;
+    padding: 0 0 15px 0;
+    margin: 0 auto;
+    width: auto;
+    text-align: center;
+    li {
+      display: inline-block;
+      position: relative;
+      margin-right: 32px;
+      white-space: nowrap;
+      width: 51px;
+      &:after {
+        content: " ";
+        width: 42px;
+        height: 0;
+        border-bottom: 1px solid #ccc;
+        position: absolute;
+        top: 45px;
+        left: 47px;
+      }
+      &:last-child {
+        margin-right: 0;
+        &:after {
+          display: none;
+        }
+      }
+      .stage-label {
+        font-size: 12px;
+        font-weight: 600;
+        position: relative;
+        text-transform: uppercase;
+      }
+      &.stage-1 .stage-label {
+        left: -1px;
+      }
+      &.stage-2 .stage-label {
+        left: -8px;
+      }
+      &.stage-3 .stage-label {
+        left: -3px;
+      }
+      .stage-count {
+        position: relative;
+        display: block;
+        color: #fff;
+        width: 47px;
+        height: 47px;
+        text-align: center;
+        background: #f8f8f8;
+        border: 1px solid #ccc;
+        @include border-radius(99px);
+      }
+      .stage-count-inner {
+        width: 39px;
+        height: 39px;
+        left: 3px;
+        top: 3px;
+        line-height: 40px;
+        display: block;
+        position: relative;
+        background: #ccc;
+        position: relative;
+        @include border-radius(99px);
+      }
+      &.active .stage-count-inner {
+        background: $theme-color-1;
+      }
+      &.seen .stage-count-inner {
+        background: $theme-color-1;
+        cursor: pointer;
+      }
+      &.completed .stage-count-inner {
+        text-indent: -9999px;
+        background: $theme-color-1;
+        cursor:pointer;
+        &:before {
+          color: #fff;
+          position: absolute;
+          width: 39px;
+          line-height: 39px;
+          z-index: 20;
+          opacity: 1;
+          text-align: center;
+          top: 0;
+          left: -3px;
+          font-size: 1.25em;
+          cursor: pointer;
+          text-indent: 0;
+        }
+      }
+      &.completed .stage-count {
+        cursor: pointer;
+      }
+    }
+  }
+  .progress-stages {
+    padding: 20px 0 0 0;
+    min-height: 402px;
+    @include border-radius(2px);
+    .progress-stage {
+      display: none;
+      &.active {
+        display: block;
+      }
+      .button {
+      	float: right
+      }
+    }
+  }
+  .progress-stage-button-prev {
+    display: block; 
+    margin-top: .5em;
+    &:before {
+      content:"\00ab\0000a0";
+    }
+  }
+  .radio-inline {
+    input[type="radio"] {
+      display: block;
+      position: absolute;
+      left: -9999px;
+    }
+    label.radio {
+      @include border-radius(2px);
+      display: inline-block;
+      width: 210px;
+      padding: 15px 5px;
+      font-family: $headline-font;
+      font-weight: bold;
+      font-size: 19px;
+      text-align: center;
+      margin: 5px 5px 10px 0;
+    }
+    input[type="radio"]:checked+label {
+      background-color: $theme-color-1;
+      color: #fff;
+    }
+  }
+  hr {
+  	border-top: 1px dashed #ccc;
+  }
+  .submit-button {
+  	float: right;
+    margin-top: 0px
+  }
+}
+
+.lt-ie9 .progress-indicator-stages li.stage-3:after {
+  display:none;
+}
+
+#donation_billing_address_state {
+  width: 100%;
+}

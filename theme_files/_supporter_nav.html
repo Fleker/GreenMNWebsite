@@ -1,0 +1,181 @@
+{% if page.is_homepage? == false %}
+<div class="sidebar-buttons">
+  {% if site.has_button1? %}
+  <a class="button supporter-nav-button" href="{{ site.button1_page.full_url_with_profile_recruiter }}"><span>{{ site.button1_text }}</span></a>
+  {% endif %}
+  
+  {% if site.has_button2? %}
+  <a class="button supporter-nav-button" href="{{ site.button2_page.full_url_with_profile_recruiter }}"><span>{{ site.button2_text }}</span></a>
+  {% endif %}
+  
+  {% if site.has_button3? %}
+  <a class="button supporter-nav-button" href="{{ site.button3_page.full_url_with_profile_recruiter }}"><span>{{ site.button3_text }}</span></a>
+  {% endif %}
+</div>  
+{% endif %}
+
+<div class="user-data">
+  
+  <div class="supporter_pic">{{ request.current_signup.bigger_profile_image }}</div>
+  
+  <div class="supporter_data">
+    
+    <a href="{{ request.current_signup.settings_url }}" class="name" id="name">{{ request.current_signup.name_or_email }}</a>
+    
+    <ul id="sup_profile">
+      
+      {% if site.show_public_profiles? == false %}
+      
+      {% elsif request.current_signup.is_profile_published? %}
+      
+      <li><a href="{{ request.current_signup.profile_url }}">Public profile</a> - <span class="inline-block"><a href="{{ request.current_signup.logout_url }}">Sign out</a></span></li>
+      
+      {% else %}
+      
+      <li>No public profile - <span class="inline-block">(<a href="{{ request.current_signup.logout_url }}">Sign out</a>)</span></li>
+      
+      {% endif %}
+      
+      <li class="points"><span class="pc">{{ request.current_signup.capital_amount_format }}</span></li>
+      
+      {% if request.current_signup.has_membership_level_badge %}
+      
+      {% if site.has_membership_page? %}
+      
+      <li><span class="badge"><a href="{{ site.membership_page.url }}">{{ request.current_signup.membership_level_badge }}</a></span></li>
+      
+      {% else %}
+      
+      <li><span class="badge">{{ request.current_signup.membership_level_badge }}</span></li>
+      
+      {% endif %}
+      
+      {% endif %}
+      
+      {% if request.current_signup.is_banned? %}
+      
+      <li><span class="">Banned</span></li>
+      
+      {% elsif request.current_signup.rule_violations_count == 1 %}
+      
+      <li><span class=""> {{ "fugue-flag-yellow" | icon }} Warning</span></li>
+      
+      {% elsif request.current_signup.rule_violations_count == 2 %}
+      
+      <li><span class=""> {{ "fugue-flag" | icon }} 1 violation</span></li>
+      
+      {% elsif request.current_signup.rule_violations_count == 3 %}
+      
+      <li><span class=""> {{ "fugue-flag-gray" | icon }} 2 violations</span></li>
+      
+      {% endif %}
+      
+    </ul>
+    
+  </div>
+  
+</div>
+
+<ul class="supporter-nav">
+  
+  {% if request.current_user.is_intern? %}
+  
+  {% if request.current_user.can_publish? %}
+  {% if page_type == 'Blog' %}
+  <li class="ico_feather"><a href="{{ page.admin_new_subpage_url }}"><i class="icon-feather"></i> <span class="menu-label">New blog post</span></a></li>
+  <li class="ico_edit"><a href="{{ page.admin_edit_url }}"><i class="icon-edit"></i> <span class="menu-label">Edit this page</span></a></li>
+  {% elsif page_type == 'Suggestion Box' %}
+  <li class="ico_feather"><a href="{{ page.admin_new_subpage_url }}"><i class="icon-feather"></i> <span class="menu-label">New suggestion</span></a></li>
+  <li class="ico_edit"><a href="{{ page.admin_edit_url }}"><i class="icon-edit"></i> <span class="menu-label">Edit this page</span></a></li>
+  {% elsif page_type == 'Calendar' %}
+  <li class="ico_feather"><a href="{{ page.admin_new_subpage_url }}"><i class="icon-feather"></i> <span class="menu-label">New event</span></a></li>
+  <li class="ico_edit"><a href="{{ page.admin_edit_url }}"><i class="icon-edit"></i> <span class="menu-label">Edit this page</span></a></li>
+  {% elsif page_type == 'Blog Post' %}
+  <li class="ico_edit"><a href="{{ page.blog_post.admin_edit_url }}"><i class="icon-edit"></i> <span class="menu-label">Edit this blog post</span></a></li>
+  {% elsif page_type == 'Question' %}
+  <li class="ico_edit"><a href="{{ page.question.admin_edit_url }}"><i class="icon-edit"></i> <span class="menu-label">Edit this question</span></a></li>
+  {% elsif page_type == 'FAQ' %}
+  <li class="ico_edit"><a href="{{ page.faq.admin_edit_url }}"><i class="icon-edit"></i> <span class="menu-label">Edit questions</span></a></li>
+  {% elsif page_type == 'Suggestion' %}
+  <li class="ico_edit"><a href="{{ page.suggestion.admin_edit_url }}"><i class="icon-edit"></i> <span class="menu-label">Edit this suggestion</span></a></li>
+  {% elsif page_type == 'Event' %}
+  <li class="ico_edit"><a href="{{ page.event.admin_edit_url }}"><i class="icon-edit"></i> <span class="menu-label">Edit this event</span></a></li>
+  {% elsif page_type == 'Profile' %}
+  <li class="ico_edit"><a href="{{ profile.admin_edit_url }}"><i class="icon-edit"></i> <span class="menu-label">Edit this person</span></a></li>
+  {% elsif page %}
+  <li class="ico_edit"><a href="{{ page.admin_edit_url }}"><i class="icon-edit"></i> <span class="menu-label">Edit this page</span></a></li>
+  {% endif %}
+  {% endif %}
+  <li class="ico_settings"><a href="{{ site.admin_dashboard_url }}"><i class="icon-settings"></i> <span class="menu-label">Control panel</span></a></li>
+  
+  {% endif %}
+  
+  {% for child in site.supporter_pages %}
+  <li {% if page == child %}class="on"{% endif %}><a href="{{ child.url }}">{{ child.icon | icon }} <span class="menu-label">{{ child.name }}</span></a></li>
+  {% endfor %}
+  
+  {% if page_type == 'User Page' %}
+  <li class="ico_pages on"><a href="{{ site.edit_pages_url }}"><i class="icon-popup"></i> <span class="menu-label">Your pages</span></a></li>
+  {% else %}
+  <li class="ico_pages"><a href="{{ site.edit_pages_url }}"><i class="icon-popup"></i> <span class="menu-label">Your pages</span></a></li>
+  {% endif %}
+  {% if page_type == 'User Settings' %}
+  <li class="on ico_settings"><a href="{{ request.current_signup.settings_url }}"><i class="icon-settings"></i> <span class="menu-label">Settings</span></a></li>
+  {% else %}
+  <li class="ico_settings"><a href="{{ request.current_signup.settings_url }}"><i class="icon-settings"></i> <span class="menu-label">Settings</span></a></li>
+  {% endif %}
+  
+  {% if page and page.is_editing_available? %}
+  <li class="ico_edit"><a href="{{ page.edit_url }}"><i class="icon-edit"></i> <span class="menu-label">Edit this page</span></a></li>
+  {% endif %}
+  
+</ul>
+
+{% if request.current_signup.has_parent? %}
+<div class="user-data">
+  <div class="supporter_pic">{{ request.current_signup.parent.bigger_profile_image }}</div>
+  <div class="supporter_data">
+    <div class="padbottom">
+      Point person: <br />{{ request.current_signup.parent.published_name_linked }}
+    </div>
+    {% if request.current_signup.parent.has_twitter_info? %}
+    <a href="{{ request.current_signup.parent.twitter_profile_url }}">Twitter</a><br />
+    {% endif %}
+    {% if request.current_signup.parent.has_facebook_info? %}
+    <a href="{{ request.current_signup.parent.facebook_profile_url }}">Facebook</a><br />
+    {% endif %}
+    {% if request.current_signup.parent.has_email? %}
+    <a href="mailto:{{ request.current_signup.parent.email }}">Email</a>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
+{% if page and page.has_rss? %}
+<div class="rss padtopmore">
+  <a href="{{ page.rss_url }}"><i class="icon-rss"></i> Subscribe with RSS</a>
+</div>
+{% elsif page and page.has_parent? and page.parent.has_rss? %}
+<div class="rss padtopmore">
+  <a href="{{ page.parent.rss_url }}"><i class="icon-rss"></i> Subscribe with RSS</a>
+</div>
+{% endif %}
+
+<script type="text/javascript">      
+  $(function() {
+    
+    var listItems = $(".supporter-nav li");
+    listItems.each(function(idx, li) {
+      
+      var class_name = $(this).find(".menu-label").html();
+      
+      var proccesed_class = class_name.replace(/\s+/g, '-').toLowerCase();
+      
+      console.log (proccesed_class);
+      
+      $(this).addClass(proccesed_class);
+      
+    });
+    
+  });    
+</script>

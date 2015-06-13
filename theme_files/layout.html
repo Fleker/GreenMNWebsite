@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page_title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, initial-scale=1.0">
+    <meta name="mobile-web-app-capable" content="yes">
+    
+    <link rel="stylesheet" href="theme.scss" type="text/css">
+    <link rel="stylesheet" href="tablet-and-desktop.scss" type="text/css" media="screen and (min-width: 320px)"> <!-- media="screen and (min-width: 768px)" -->
+    <!-- <link rel="stylesheet" href="t5.scss" type="text/css">
+    <link rel="stylesheet" href="t5-responsive.scss" type="text/css"> -->
+    
+    <link rel="stylesheet" href="customized.scss" type="text/css">
+    
+    <!-- because ie8 ignores media queries, we need this -->
+    <!--[if IE 8]>
+    <link rel="stylesheet" href="tablet-and-desktop.scss" type="text/css">
+    <![endif]-->
+    <!--[if IE]>
+    <link rel="stylesheet" href="ie.scss" type="text/css">
+    <![endif]-->
+    
+    
+    
+    
+    {{ content_for_header }}
+    
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    
+    
+    
+    <script type="text/javascript" src="three_box_click.js"></script>
+    <script type="text/javascript">$(document).ready(function(){
+        $("div#volunteerclickpage.grey").click(function(){
+          window.location="volunteer";
+          return false;
+        })
+      })</script>
+    <script type="text/javascript">$(document).ready(function(){
+        $("div#donateclickpage.green").click(function(){
+          window.location="donate";
+          return false;
+        })
+      })</script>
+    <script type="text/javascript">$(document).ready(function(){
+        $("div#joinclickpage.grey").click(function(){
+          window.location="connect";
+          return false;
+        })
+      })</script>
+    <script type="text/javascript" src="jquery.ui.effect.min.js"></script>
+    <script type="text/javascript" src="jquery.ui.effect-slide.min.js"></script>
+    <script type="text/javascript" src="staged-donations.js"></script>
+    
+    <script type="text/javascript">NB.appConfig.userIsLoggedIn = {{request.logged_in?}};</script>
+  </head>
+  <body {% if page.is_homepage? %}id="home"{% endif %} class="aware-theme v2-theme {{ page.page_class_name }} js">
+    
+    <div id="pattern" class="pattern">
+      <div class="wrap" id="wrap">
+        <div id="body" class="page-{{ request.template | replace: '_', '-' }}">
+          
+          {% if request.logged_in? == false %}
+          <!--
+          <section class="preheader clearfix">
+            -->
+            	<!-- removed the preheader email -->
+            <!--div class="subscribe_form"--><!-- include "preheader_email_signup" with site.signup_page --><!--/div-->
+						<!-- change html commment to open brace percent-->
+            
+            {% if request.sorta_logged_in? == false %}
+            
+            
+            <!--
+            <div class="social_connect">
+              
+               
+              
+              <a class="icon-twitter_alt2" title="Us using Twitter" href="{{ request.twitter_connect_url }}"></a>
+              
+              <a class="icon-fb" title="Us using Facebook" href="{{ request.facebook_connect_url }}"></a>
+              
+             <a class="submit_button" href="/login">login</a>
+              <a class="submit_button" href="/login"></a>
+              
+              
+            </div>
+					-->
+            {% endif %}
+            
+          <!--/section--><!-- .preheader desktop -->
+          <div id="openPre" class="mobile-visible"><a href="#">Join <i class="icon-uniF107"></i></a></div>
+          
+          {% endif %}
+          
+          <div class="header-container" {% if site.has_header_image? %} style="background: url('{{ site.header_image_url_1026 }}')" {% endif %}>
+            
+            <div class="width-container clearfix">
+              
+              {% include "nav" %}
+              
+              {% if site.has_meta_image? %}
+              <div class="site-logo"><header><a href="/"><img src="{{ site.meta_image_url }}"></a></header></div>
+              {% else %}
+              <header><h1 class="title"><a href="/">{{ site.long_name }}</a></h1></header>
+              {% endif %}
+              
+              
+            </div><!-- .width-container -->
+            
+          </div><!-- .header-container -->
+          
+          {% if page.is_homepage? == false %}
+          <div id="headline-bar" class="width-container clearfix">
+            {% include "breadcrumbs" %}  
+            <div id="headline">
+              {% if page.headline.size %}
+              <h2 class="headline">{{ page.headline }}</h2>
+              {% endif %}
+            </div>
+          </div><!-- .width-container  -->
+          {% endif %}
+          
+          {% if page.is_homepage? == true %}
+          <div id="content-wrapper">
+            {% else %}
+            <div id="inner-content-wrapper">  
+              {% endif %}
+              
+              <div class="width-container clearfix">
+                
+                {% if page.features_count > 0 %}
+                {% include "features" %}
+                {% endif %}
+                
+                {% include "columns_1" %}
+                
+              </div><!-- .width-container -->
+              
+            </div><!-- #content-wrapper -->
+            
+            <footer>
+              
+  
+              
+              <div class="menu"><div class="width-container"><div class="row-fluid">
+                <div id="footer-nav" class="span10">{% include "footer_nav" %}</div>
+                {% if site.has_twitter? or site.has_facebook_page? %}
+                <div class="span2">
+                  {% if site.has_facebook_page? %}
+                    <a class="fb" href="{{ site.broadcaster.facebook_page_profile_url }}"></a>
+                  {% endif %}
+                  {% if site.has_twitter? %}
+                    <a class="twitter" href="{{ site.broadcaster.twitter_profile_url }}"></a>
+                  {% endif %}
+                </div>
+                {% endif %}
+                </div></div></div>
+              
+              <div class="by"><div class="width-container"><div class="row-fluid">
+                
+                {% if site.has_twitter? or site.has_facebook_page? %}
+                <div class="span7 footer-left">
+                  {% else %}
+                  <div class="span12"> 
+                    {% endif %}
+                    
+                    {% if request.logged_in? %}
+                    Signed in as <a href="{{ request.current_signup.settings_url }}">{{ request.current_signup.name_or_email }}</a>.<br />
+                    View your
+                    {% if site.show_public_profiles? %}
+                    <a href="{{ request.current_signup.profile_url }}">public profile</a>,
+                    {% endif %}
+                    <a href="{{ request.current_signup.settings_url }}">account settings</a>, or
+                    <a href="{{ request.current_signup.logout_url }}">sign out</a>.
+                    {% else %}
+                    Sign in with <a href="{{ request.facebook_connect_url }}">Facebook</a>, <a href="{{ request.twitter_connect_url }}">Twitter</a> or <a href="/login">email</a>.
+                    {% endif %}
+                    <br /><br />
+                    <!-- The NationBuilder link below is required. If it is removed, we may add it back ourselves. You can style it or move it in different ways, but please leave it in the footer. -->
+                    <span id="credits">Created with <a href="http://nationbuilder.com/">NationBuilder</a> - Theme by <a href="http://tectonica.co/">Tectonica</a></span>
+                    <p id="copy">&copy; 2014 CityZen &amp; NationBuilder - Some rights reserved</p>
+                    
+                  </div>
+                  
+                  {% if site.has_twitter? or site.has_facebook_page? %}
+                  <div class="span5 footer-right">
+                    
+                    {% if site.has_twitter? %}
+                    <div class="twitter-box">
+                      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                      <a href="{{ site.broadcaster.twitter_profile_url }}" class="twitter-follow-button" data-show-count="false">Follow @fermdq74</a>
+                    </div>
+                    {% endif %}
+                    
+                    {% if site.has_facebook_page? %}
+                    <div class="fb-like" data-href="{{ site.broadcaster.facebook_page_profile_url }}" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
+                    {% endif %}
+                    
+                  </div>
+                  {% endif %}
+                  
+                </div></div></div>
+                
+              </footer>
+              
+            </div></div></div>
+        
+        {{ content_for_footer }}
+        
+        {% if site.has_background_image? %}
+        <!--[if lt IE 9]>
+<script type="text/javascript" src="/javascripts/jquery.backstretch.min.js"></script>
+<script type="text/javascript">
+jQuery.backstretch("{{ site.background_image_url }}", {speed: 0});
+</script>
+<![endif]-->
+        <style>
+          body {
+            background: url('{{ site.background_image_url }}') no-repeat center 0 fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+          }
+        </style>
+        {% endif %}
+        
+        
+        <script type="text/javascript">
+          $(function() {
+            
+            $("#sidebar").mouseenter(function(){
+              if ($(window).width() > 1024){
+              	$(this).animate({
+                  width: "270px"
+                }, 300, 
+                function(){
+                   	$(this).addClass("active");
+                });
+              }
+            })
+            .mouseleave(function(){
+              if ($(window).width() > 1024){
+              	$(this).animate({
+                  width: "118px"
+                }, 300, function(){
+                  	$(this).removeClass("active");
+                });
+              }
+            });
+            
+              $("#openPre").click(function(){
+              
+              $(".preheader").toggleClass("open", 500);
+              
+            });
+            
+            function sideBar() {
+              
+              if ($(window).width() > 1025){
+                desktop = true;
+              }
+              
+              if ($(".preheader").length>0 && desktop) { 
+                
+                preheader = $(".preheader").outerHeight();
+                
+                $('#sidebar').css('top',  preheader).css("height", $(window).height() -  preheader);  
+                
+              }
+              
+              $(window).scroll(function() {
+                
+                if (desktop) {
+                  
+                  var height = $(window).height();
+                  
+                  if ($(".preheader").length>0) { 
+                    
+                    preheader2= $(".preheader").outerHeight();
+                    
+                  } else {
+                    
+                    preheader2 = 0;
+                    
+                  }
+                  
+                  if ($(window).scrollTop() <=  preheader2) {
+                    
+                    $('#sidebar').css('top',  preheader2 - $(window).scrollTop()).css("height", height +  preheader2 - $(window).scrollTop());
+                    
+                  } else {
+                    
+                    $('#sidebar').css('top', 0).css("height", height);
+                    
+                  }
+                  
+                }
+              }); 
+              
+            }
+            
+            sideBar();
+            $(window).bind('resize', sideBar);
+            
+          });    
+        </script>
+        
+      </body>
+    </html>

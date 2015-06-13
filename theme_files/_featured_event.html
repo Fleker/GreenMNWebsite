@@ -1,0 +1,19 @@
+<h2>Events Calendar</h2>
+{% for event in page.calendar.events_upcoming limit:1 offset:0 %}
+<article class="clearfix">
+  
+  <div class="event-data clearfix">
+    <div class="date"><span class="datetime">{{ event.published_at | date: '%b %d, %I:%M %p' }}</span></div>
+    <h3><a href="{{ event.url }}">{{ event.name }}</a></h3>
+    <p>{{ event.event.content | strip_html }}</p>
+    <div class="rsvp"><span class="rsvpcount">{{ event.event.rsvps_count }} people</span> are going. Will you?</div>
+    <a class="rsvp-link" href="{{ event.url }}"><span class="citicon-check"></span>RSVP to this event</a>
+  </div>
+  
+  <div class="event-map">
+    <img src="http://maps.googleapis.com/maps/api/staticmap?center={{ event.event.venue_address.google_map_url_location }}&zoom=14&size=640x640&scale=2&markers=size:mid%7Ccolor:red%7C{{ event.event.venue_address.google_map_url_location }}&sensor=false" alt="location for {{ event.event.venue_name }}" style="display:block" />
+  </div>
+  
+</article>
+{% endfor %}
+<p class="bt-wrapper-latest"><a class="button events-button" href="/calendar">View all Events</a></p>

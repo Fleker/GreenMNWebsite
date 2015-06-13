@@ -1,0 +1,116 @@
+// buttons
+
+@mixin button(){
+  cursor: pointer;
+  display: block;
+  background: $theme-color-1;
+  @include border-radius(3px);
+  padding: 1em;
+  margin: 20px auto 10px;
+  border: 0 none; 
+  font: 16px $font normal;
+  color: $color-button;
+  min-height: 39px;
+  
+  text-align: center;
+  text-shadow: rgba(0,0,0,0.2) 0 1px;
+  a {
+    color: #fff;
+  }
+  &:hover {
+    background-color: lighten($theme-color-3, 5);
+  }
+}
+
+.button, .small_button {
+  @include button;
+  box-shadow: none !important;
+}
+
+.tiny-button {
+  font-size: 12px;
+  min-height: 100%;
+  margin: 0;
+  padding: 0.5em
+}
+
+.submit, .submit-button, .success-button {
+  @include button;
+  border: 0;
+}
+
+.submit, .submit-button, .button {
+  &:hover, &:active, &:focus {
+  	background: lighten($theme-color-1,10);
+  	color: #fff;
+  }
+}
+
+// red button, commonly used to cancel actions
+
+.destroy-link {
+  background: #cf0c0a; 
+  max-width: 160px;
+  &:hover {
+    background-color: lighten(#cf0c0a,5);
+  }
+}
+
+.submit-link {
+  cursor: pointer;
+  border: 0;
+  background-color: $theme-color-1;
+  @include border-radius(3px);
+  display: block;
+  color: $color-button;
+  font: 16px $font;
+  padding: 1em;
+  &:hover {
+    text-decoration: none;
+    color: $color-button;
+    background-color: lighten($theme-color-1, 5);
+  }
+}
+
+.neutral-link {
+  background-color: $theme-color-1;
+  &:hover {
+    background-color: lighten($theme-color-1, 5);
+  }
+}
+
+// button to close share box
+
+.share-close {
+  float: right;
+  margin: -15px -15px 10px 10px; 
+  padding: 5px;
+  min-height: auto;
+  font-size: 11px;
+  @include border-radius(0px);
+}
+
+// read more link
+
+.read-more, .read_more {
+  display: block;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.share-container {
+  .small-button {
+    min-height: 24px;
+    padding: 5px 10px;
+    font-size: 12px;
+  }
+}
+
+// pledge buttons
+
+#vote_pledge_form .button { 
+  width: 80px;
+  text-align: center;
+  float: left;
+  margin: 0 15px 0 0;
+}

@@ -1,0 +1,13 @@
+{% if page.is_homepage? == true %}
+<div class="onecolumn-container clearfix">
+{% endif %}
+  
+  <div class="columns-1-flash">{{ content_for_notifications }}</div>
+
+  <div class="content-{{ request.template  | replace: '_', '-' }}">
+    {% yield %}
+  </div>
+
+{% if page.is_homepage? == true %}
+</div><!-- /onecolumn-container -->
+{% endif %}

@@ -1,0 +1,40 @@
+/*for the left hand image style */
+@media screen and (min-width: 800px) 
+{
+	.left-image-homepage 
+	{
+		margin-left:60px;
+		margin-right: 80px;
+		float: left;
+		margin-bottom: 40px;
+	}
+}
+
+@media screen and (min-width: 400px) 
+{
+	.left-image-homepage 
+	{
+		margin-left:60px;
+		margin-right: 80px;
+		float: left;
+		margin-bottom: 40px;
+	}
+}
+
+
+
+
+.middle-image-homepage 
+{
+	margin-right:60px; 
+	float: left; 
+	margin-bottom: 40px;
+}
+
+
+.right-image-homepage 
+{
+	margin-right:60px; 
+	float: left; 
+	margin-bottom: 40px;
+}

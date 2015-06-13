@@ -1,0 +1,48 @@
+<div id="content" class="blog">
+
+  <div class="post-bar">
+    <div class="byline">
+      <!-- removed page author from page-->
+      Posted on <!-- page.author.published_name_linked --> {{ page.published_at | date: '%B %d, %Y %l:%M %p' }}
+    </div>
+    <div class="share-button">
+      {{ "Share" | share_button page_id: page.id }}
+    </div>
+    {% if post.show_stream? %}
+    <div class="reactions">
+      <a href="{{ post.url }}#addreaction" class="button small-button">
+        {% if post.public_activities_count > 0 %}
+        <span class="ico_chat_post">{{ page.public_activities_count }} Reaction{% if post.public_activities_count > 1 %}s{% endif %}</span>
+        {% else %}
+        <span class="ico_chat_post">Add your reaction</span>
+        {% endif %}
+      </a>
+    </div>
+    {% endif %}
+  </div>
+  
+  <div id="intro" class="page-excerpt clearfix">
+    <div class="headline">
+      <h2>{{ page.headline }}</h2>
+    </div>    
+    <div class="content">
+      {{ page.blog_post.content_full }}
+    </div>
+    
+    {% if page.tags_count > 0 %}
+    <div class="page-tags">
+      {% include "page_tags" with page %}
+    </div>
+    {% endif %}
+  	
+    <div class="like-page">
+      <strong>Do you like this post?</strong>
+      {% include "like_page" %}
+    </div>  
+  </div>
+
+  {% if page.show_stream? %}
+  {% include "page_stream" %}
+  {% endif %}
+
+</div>

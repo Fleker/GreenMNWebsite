@@ -1,0 +1,7 @@
+{% if page.show_stream? and request.sorta_logged_in? %}
+  {% if request.current_signup.following_page_ids contains page.id %}
+  <a href="{{ page.unfollow_url }}" class="delete"><span class="addreaction">Unfollow</span></a>
+  {% else %}
+  <a href="{{ page.follow_url }}" class="post"><span class="addreaction">Follow</span></a>
+  {% endif %}
+{% endif %}

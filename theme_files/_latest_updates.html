@@ -1,0 +1,18 @@
+<h2>Latest Updates</h2>
+{% for post in page.blog.most_recent_blog_posts limit:2 offset:0 %}
+<article>
+  
+  <div class="date">{{ post.published_at | date: '%b %d, %Y' }}</div>
+  
+  <h3><a href="{{ post.url }}">{{ post.headline }}</a></h3>
+  
+  <p>{{ post.blog_post.content | truncatewords: 40 | strip_html }}</p>
+  
+  <div class="share">
+    <h4>Share this Article</h4>
+    {{ "SHARE" | share_button page_id: post.id }}
+  </div>
+  
+</article>
+{% endfor %}
+<p class="bt-wrapper-latest"><a class="button updates-button" href="/updates">View all updates</a></p>

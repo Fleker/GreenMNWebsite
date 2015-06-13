@@ -1,0 +1,36 @@
+<div id="content" class="blog clearfix">
+  
+  <div class="post-bar">
+
+    <div class="byline">
+      {{ page.published_at | date: '%B %d, %Y' }} | 
+      
+      {% if page.has_author? %}
+      Contact: <span class="n">{{ page.author.published_name }}</span> | 
+      {{ page.author.phone_number }} | 
+      {{ page.author.email | enkode_email }}
+      {% endif %}
+  	</div>
+    
+  </div>
+  
+  <div id="intro" class="page-excerpt clearfix">
+    {{ page.press_release.content }}
+
+    <div class="like-page">
+      <strong>Do you like this post?</strong>
+      {% include "like_page" %}
+    </div>
+  </div>
+  
+  {% if page.tags_count > 0 %}
+  <div id="page-tags" class="page-tags">
+    {% include "page_tags" with page %}
+  </div>
+  {% endif %}
+
+</div>
+
+{% if page.show_stream? %}
+{% include "page_stream" %}
+{% endif %}

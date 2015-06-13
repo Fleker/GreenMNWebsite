@@ -1,0 +1,18 @@
+
+{% for post in page.blog.most_recent_blog_posts limit:10 offset:0 %}
+	<div style="font-weight: bold; font-size: 18px;">
+    <a href="{{ post.url }}">
+      {{ post.headline }}
+    </a>
+	</div>
+	<div class="byline">
+    {{ post.published_at | date: '%b %d, %Y' }}
+	</div>
+	<div class="blog_teaser">
+    {{ post.blog_post.content | strip_html | truncatewords:50 }}
+	</div>
+	<div class="continue_reading">
+    <a href="{{ post.url }}">Read more</a> →
+	</div>
+	<hr />
+{% endfor %}
