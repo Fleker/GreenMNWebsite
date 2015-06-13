@@ -3014,322 +3014,414 @@ footer
 	}
 }
 
-.supporter-nav-button {
-  margin: 5px 0;
-  text-align: center;
-  font-size: 18px;
-  width: 50%;
-  line-height: 30px;
-  position:relative;
-  margin-left:auto;
-  margin-right:auto;
+.supporter-nav-button
+{
+	margin: 5px 0;
+	text-align: center;
+	font-size: 18px;
+	width: 50%;
+	line-height: 30px;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
 }
 
 // rules link shown near comment box
 
-.review-rules {
-  display: block;
-  padding: 0px 15px 0 18px;
-  font-size: 12px;
-  overflow: hidden;
-  width: auto;
-  
-  a {
-    color: $color-addreaction;
-    font-size: 14px;
-    float: right;
-    font-family: "proxima-nova",sans-serif;
-  }
+.review-rules 
+{
+	display: block;
+	padding: 0px 15px 0 18px;
+	font-size: 12px;
+	overflow: hidden;
+	width: auto;
+
+	a
+	{
+		color: $color-addreaction;
+		font-size: 14px;
+		float: right;
+		font-family: "proxima-nova",sans-serif;
+	}
 }
 
 // follow page link shown in page stream
 
-.page-follow {
-  font-size: 13px;
-  font-weight: bold;
-  float: right
+.page-follow
+{
+	font-size: 13px;
+	font-weight: bold;
+	float: right
 }
 
 // optional header image uploaded in site settings
 
-.header-image {
-  max-width: 100%;
-  margin-bottom: 50px;
-  margin-top: -30px;
+.header-image
+{
+	max-width: 100%;
+	margin-bottom: 50px;
+	margin-top: -30px;
 }
 
 //message that appears when a form is submitted
-.form-submitting {
-  padding: 15px 7px 0 0;
-  img {
-    margin-right: 6px;
-  }
+.form-submitting 
+{
+	padding: 15px 7px 0 0;
+	
+	img
+	{
+		margin-right: 6px;
+	}
 }
 
 // suggestion box tags
 
-.tag-list {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-  li {
-    display: inline;
-    line-height: 37px;
-    white-space: nowrap;
-    a {
-      padding: 1px 5px;
-      margin: 0 3px 0 0;
-      text-decoration: none;
-      text-transform: capitalize;
-      background-color: $theme-color-2;
-      @include border-radius(2px);
-      color:$tag-link-color;
-    }
-  }
-  li a:hover {
-      background-color: darken($theme-color-2, 10);
-    }
-    li.current a, li.current a:hover {
-      color: #fff;
-      background-color: $theme-color-1;
-    }
+.tag-list
+{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	li
+	{
+		display: inline;
+		line-height: 37px;
+		white-space: nowrap;
+		a
+		{
+			padding: 1px 5px;
+			margin: 0 3px 0 0;
+			text-decoration: none;
+			text-transform: capitalize;
+			background-color: $theme-color-2;
+			@include border-radius(2px);
+			color:$tag-link-color;
+		}
+	}
+	
+	li a:hover 
+	{
+		background-color: darken($theme-color-2, 10);
+	}
+	
+	li.current a,
+	li.current a:hover
+	{
+		color: #fff;
+		background-color: $theme-color-1;
+	}
 }
 
 // layout for share buttons at the bottom of most pages
 
-.sharetable {
-  min-height: 39px;
-  .facebook-cell,
-  .twitter-cell,
-  .gplus-cell {
-    float: left;
-    text-align: left;
-    vertical-align: top;
-  }
-  .facebook-cell {
-    padding: 0 20px 15px 0;
-    width: 350px;
-  }
-  .twitter-cell {
-    padding: 0 20px 0 0;
-    width: 75px;
-    
-    a {
-      text-indent: -999em;
-      display: inline-block;
-    }
-  }
-  .gplus-cell {
-    width: 52px;
-  }
+.sharetable
+{
+	min-height: 39px;
+
+	.facebook-cell,
+	.twitter-cell,
+	.gplus-cell 
+	{
+		float: left;
+		text-align: left;
+		vertical-align: top;
+	}
+	
+	.facebook-cell 
+	{
+		padding: 0 20px 15px 0;
+		width: 350px;
+	}
+	
+	.twitter-cell 
+	{
+		padding: 0 20px 0 0;
+		width: 75px;
+
+		a 
+		{
+			text-indent: -999em;
+			display: inline-block;
+		}
+	}
+	
+	.gplus-cell 
+	{
+		width: 52px;
+	}
 }
 
-.like-page {
-  margin-top: 15px;
+.like-page
+{
+	margin-top: 15px;
 }
 
 // political/social capital displayed next to names
 
-.pc {
-  background-color: $theme-color-2;
-  color: $color-pc;
-  padding: 2px 5px;
-  font-size: 10px;
+.pc
+{
+	background-color: $theme-color-2;
+	color: $color-pc;
+	padding: 2px 5px;
+	font-size: 10px;
 }
 
 // yes or no indicator on recuiter page
 
-.off-button-small {
-  font-size: 11px;
-  color: $red;
+.off-button-small
+{
+	font-size: 11px;
+	color: $red;
 }
 
-.on-button-small {
-  font-size: 11px;
-  color: $green;
+.on-button-small
+{
+	font-size: 11px;
+	color: $green;
 }
 
-.subhead {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 12px;
+.subhead
+{
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 12px;
 }
 
 // applied to alerts or warnings
 
-.red {
-  color: $red;
+.red
+{
+	color: $red;
 }
 
-small {
-  font-size: 85%;
+small
+{
+	font-size: 85%;
 }
 
 // timestamp on activity
 
-.timeago {
-  font-size: 65%;
+.timeago
+{
+	font-size: 65%;
 }
 
 // tags users can select on suggestion page
 
-.suggestion-tag-list {
-  margin: 0;
-  padding: 0;
-  li {
-    display: inline-block;
-    list-style: none;
-    text-align: center;
-    margin:  0 0 10px 0;
-  }
-  a {
-    padding: 5px 0 15px 0;
-    text-decoration: none;
-    color: black;
-    text-transform: capitalize;
-    .tag-count {
-      color: #777;
-    }
-  }
+.suggestion-tag-list
+{
+	margin: 0;
+	padding: 0;
+	li
+	{
+		display: inline-block;
+		list-style: none;
+		text-align: center;
+		margin:  0 0 10px 0;
+	}
+	
+	a
+	{
+		padding: 5px 0 15px 0;
+		text-decoration: none;
+		color: black;
+		text-transform: capitalize;
+		
+		.tag-count 
+		{
+			color: #777;
+		}
+	}
 }
 
-.leaderboard {
-  background: $bg-activities;
-  padding: 60px;
-  color: #fff;
-  overflow: hidden;
-  width: 100%;
-  display: block;
-  margin-bottom: 25px;
-  h4 {
-    margin-bottom: 15px;
-  }
-  &.last {
-    margin-bottom: 0;
-  }
-  .odd { background: lighten($bg-activities, 10) }
+.leaderboard
+{
+	background: $bg-activities;
+	padding: 60px;
+	color: #fff;
+	overflow: hidden;
+	width: 100%;
+	display: block;
+	margin-bottom: 25px;
+	
+	h4
+	{
+		margin-bottom: 15px;
+	}
+	
+	&.last 
+	{
+		margin-bottom: 0;
+	}
+	
+	.odd
+	{
+		background: lighten($bg-activities, 10);
+	}
 }
 
 // list of people on leaderboards, follows and following pages
 
-.people-list {
-  padding: 14px 10px 10px 10px;
-  width: 100%;
-  margin-bottom: 5px;
-  min-height: 72px;
-  position: relative;
-  .people-list-pic {
-    margin: -14px 10px 0 -10px;
-    float: left;
-    height: 72px;
-    width: 72px;
-    position: relative;
-  }
-  .people-name {
-    font-weight: bold;
-    float: left; padding-right: 10px;
-  }
-  .leaderboard-rank, .people-pc {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: #000;
-    font-size: 10px;
-    line-height: 17px;
-    padding: 0 5px;
-    color: white;
-  }
-  .people-list-follow {
-    text-align: center;
-    font-size: 13px;
-    position: absolute;
-    top: 10px;
-    right: 5px;
-    width: 30%;
-    .button a:hover {
-        color: #fff  
-      }
-  }
-  .network {
-    display: inline-block;
-    margin-top: 5px;
-    font-size: 17px;
-  }
-  .button { margin: 5px auto 0 }
-}
-.people-list.odd { 
-  background: lighten($bg-activities, 10);
-  color: #fff
+.people-list
+{
+	padding: 14px 10px 10px 10px;
+	width: 100%;
+	margin-bottom: 5px;
+	min-height: 72px;
+	position: relative;
+
+	.people-list-pic 
+	{
+		margin: -14px 10px 0 -10px;
+		float: left;
+		height: 72px;
+		width: 72px;
+		position: relative;
+	}
+
+	.people-name 
+	{
+		font-weight: bold;
+		float: left;
+		padding-right: 10px;
+	}
+
+	.leaderboard-rank,
+	.people-pc 
+	{
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		background-color: #000;
+		font-size: 10px;
+		line-height: 17px;
+		padding: 0 5px;
+		color: white;
+	}
+	.people-list-follow 
+	{
+		text-align: center;
+		font-size: 13px;
+		position: absolute;
+		top: 10px;
+		right: 5px;
+		width: 30%;
+		.button a:hover 
+		{
+			color: #fff  
+		}
+	}
+
+	.network 
+	{
+		display: inline-block;
+		margin-top: 5px;
+		font-size: 17px;
+	}
+
+	.button
+	{
+		margin: 5px auto 0;
+	}
 }
 
-.supporter-follow-details {
-  font-size: 0.9em;
-  overflow: hidden;
-  .network {
-    padding-right: 10px;
-  }
-  .addreaction, .addreaction-right, .plus, .plus-left {
-    font-size: 1em;
-  }
+.people-list.odd
+{ 
+	background: lighten($bg-activities, 10);
+	color: #fff
+}
+
+.supporter-follow-details 
+{
+	font-size: 0.9em;
+	overflow: hidden;
+
+	.network
+	{
+		padding-right: 10px;
+	}
+
+	.addreaction,
+	.addreaction-right,
+	.plus,
+	.plus-left
+	{
+		font-size: 1em;
+	}
 }
 // alternating background color used in people list
 
-.odd {
-  background-color: #f3f3f3;
+.odd 
+{
+	background-color: #f3f3f3;
 }
 
 // tracking url on recruiting page
 
-#tracking_link {
-  width: 100%;
-  font-weight: bold;
-  font-size: 17px;
+#tracking_link
+{
+	width: 100%;
+	font-weight: bold;
+	font-size: 17px;
 }
 
 // if a page has tags
 
-.page-tags {
-  margin: 1em;
-  .icon-tag {
-    display: none;
-    padding-top: 5px;
-    font-size: 12px;
-  }
+.page-tags 
+{
+	margin: 1em;
+
+	.icon-tag 
+	{
+		display: none;
+		padding-top: 5px;
+		font-size: 12px;
+	}
 }
 
-.page-tag-background {
-  display: inline-block;
+.page-tag-background
+{
+	display: inline-block;
 }
 
-.page-tag {
-  padding: 0px 15px;
-  font-size: 14px;
-  text-indent: 40px;
-  background-color: $theme-color-1;
-  color: white;
-  @include border-radius(2px);
-  white-space: nowrap;
-  a {
-    color: white;
-  }
+.page-tag
+{
+	padding: 0px 15px;
+	font-size: 14px;
+	text-indent: 40px;
+	background-color: $theme-color-1;
+	color: white;
+	@include border-radius(2px);
+	white-space: nowrap;
+	
+	a
+	{
+		color: white;
+	}
 }
 
 // site rules
 
-.rule-list {
-  font-size: 22px;
-  font-weight: normal;
-  padding-left: 20px;
-  li {
-    padding-bottom: 15px;
-  }
-  .rule {
-    font-size: 16px;
-    font-weight: bold;
-  }
-  p {
-    margin: 5px 0;
-  }
+.rule-list
+{
+	font-size: 22px;
+	font-weight: normal;
+	padding-left: 20px;
+	
+	li
+	{
+		padding-bottom: 15px;
+	}
+	
+	.rule
+	{
+		font-size: 16px;
+		font-weight: bold;
+	}
+	
+	p
+	{
+		margin: 5px 0;
+	}
 }
 
 // paid membership options
