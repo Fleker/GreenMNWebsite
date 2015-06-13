@@ -3636,147 +3636,208 @@ ul.membership-list {
 
 // share box which appears after a user submits an action
 
-.flash-share {
-  background: #f1f1f1;
-  padding: 20px;
-  border: 1px solid #FFF;
-  box-shadow: rgba(0,0,0,0.1) 0 0 1px;  
-  margin: 0 0 25px 0;
-  .h3 {
-    @include border-radius-top-left(5px);
-    @include border-radius-top-right(5px);
-    font-size: 24px;
-    font-family: $headline-font;
-    background-color: $theme-color-3;
-    color: white;
-    padding: 15px;
-    margin: 0;
-  }
-  .share {
-    @include border-radius-bottom-left(0px);
-    @include border-radius-bottom-right(0px);
-    @include border-radius-top-left(0);
-    @include border-radius-top-right(0);
-    border-bottom: none;
-    padding: 0;
-    width: 100%;
-  }
-  div.share > div {
-    position: relative;
-    width: 100%;
-    .text {
-      background: #fff;
-      border: 1px solid #ccc;
-      margin: 0 0 20px;
-    }
-  }
-  label { color: #333 }
-  .text { border: 1px solid #666 }
-  .float.clearfix {
-    width: 56%;
-    margin: 0 auto;
-    
-    input {
-      float: left;
-      margin: 0;
-    }
-    small {
-      float: right;
-      line-height: 50px;
-      display: block;
-    }
-  }
+.flash-share
+{
+	background: #f1f1f1;
+	padding: 20px;
+	border: 1px solid #FFF;
+	box-shadow: rgba(0,0,0,0.1) 0 0 1px;  
+	margin: 0 0 25px 0;
+	
+	.h3 
+	{
+		@include border-radius-top-left(5px);
+		@include border-radius-top-right(5px);
+		font-size: 24px;
+		font-family: $headline-font;
+		background-color: $theme-color-3;
+		color: white;
+		padding: 15px;
+		margin: 0;
+	}
+	
+	.share 
+	{
+		@include border-radius-bottom-left(0px);
+		@include border-radius-bottom-right(0px);
+		@include border-radius-top-left(0);
+		@include border-radius-top-right(0);
+		border-bottom: none;
+		padding: 0;
+		width: 100%;
+	}
+	
+	div.share > div 
+	{
+		position: relative;
+		width: 100%;
+
+		.text 
+		{
+			background: #fff;
+			border: 1px solid #ccc;
+			margin: 0 0 20px;
+		}
+	}
+	
+	label
+	{
+		color: #333;
+	}
+	
+	.text
+	{
+		border: 1px solid #666;
+	}
+	
+	.float.clearfix 
+	{
+		width: 56%;
+		margin: 0 auto;
+
+		input 
+		{
+			float: left;
+			margin: 0;
+		}
+		small 
+		{
+			float: right;
+			line-height: 50px;
+			display: block;
+		}
+	}
 }
 
-.pattern {
-  overflow: hidden;
-  & > .wrap {
-    padding-bottom: 20px;
-  }
+.pattern 
+{
+	overflow: hidden;
+	
+	& > .wrap
+	{
+		padding-bottom: 20px;
+	}
 }
 
 // used to slide out off canvas nav
 
-.wrap {
-  position: relative;
-  @include transition(all 0.3s ease-out);
-  &.active {
-    left: 16em;
-  }
+.wrap
+{
+	position: relative;
+	@include transition(all 0.3s ease-out);
+	
+	&.active 
+	{
+		left: 16em;
+	}
 }
 
 // hide one column container if these wide templates are used
 
-.page-profiles-show-wide, .page-pages-show-faq-wide, .page-pages-show-question-wide {
-  .onecolumn-container {
-    background-color: transparent;
-    padding: 0;
-    @include border-radius(0);
-    border: none;
-    margin: 0;
-  }
-  .right-column .is_following {
-    display: none;
-  }
+.page-profiles-show-wide, .page-pages-show-faq-wide, .page-pages-show-question-wide
+{
+	.onecolumn-container
+	{
+		background-color: transparent;
+		padding: 0;
+		@include border-radius(0);
+		border: none;
+		margin: 0;
+	}
+
+	.right-column .is_following
+	{
+		display: none;
+	}
 }
 
 // content only visible in mobile viewport
 
-.mobile-visible {
-  display: none;
+.mobile-visible
+{
+	display: none;
 }
 
 // content only visible in desktop viewport
 
-.desktop-visible {
-  display: none;
+.desktop-visible
+{
+	display: none;
 }
 
-.comment .form {
-  @include nb-clearfix;
+.comment .form
+{
+	@include nb-clearfix;
 }
 
 // making sure google map on calendar page resizes properly
 
-#google_map {
-  img {
-    max-width: none;
-  }
-  * {
-    -webkit-box-sizing: content-box;
-    box-sizing: content-box;
-  }
+#google_map
+{
+	img
+	{
+		max-width: none;
+	}
+	
+	*
+	{
+		-webkit-box-sizing: content-box;
+		box-sizing: content-box;
+	}
 }
 
 // share box container, shown when a user clicks the share button
 
-div.share {
-  display: inline-block;
-  padding: 0; margin: 20px 0 0;
-  h4 { margin: 0 0 10px }
+div.share
+{
+	display: inline-block;
+	padding: 0;
+	margin: 20px 0 0;
+	h4
+	{
+		margin: 0 0 10px;
+	}
 }
-div.share > div {
-  color: #fff;
-  font-size: 16px; font-family: $font;
-  float:left;
-  letter-spacing: 1px;
-  line-height:27px; 
-  margin-right: 0;
-  position: absolute; bottom: 0; left: 0; right: 0;
+
+div.share > div
+{
+	color: #fff;
+	font-size: 16px;
+	font-family: $font;
+	float:left;
+	letter-spacing: 1px;
+	line-height:27px; 
+	margin-right: 0;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 }
-div.share > a { 
-  background: url($share-icons) no-repeat !important;
-  display: block;
-  padding: 0;
-  text-indent: -9999px;
+
+div.share > a
+{ 
+	background: url($share-icons) no-repeat !important;
+	display: block;
+	padding: 0;
+	text-indent: -9999px;
 }
-div.share {
-  .text, .select, .textarea, select {
-    border: 0 none;
-    border-radius: 5px;
-    box-shadow: none;
-  }
-  .text { margin: 0 }
+
+div.share
+{
+	.text,
+	.select,
+	.textarea,
+	select
+	{
+		border: 0 none;
+		border-radius: 5px;
+		box-shadow: none;
+	}
+	
+	.text
+	{
+		margin: 0;
+	}
 }
 
 .share-container {
