@@ -3469,126 +3469,169 @@ ul.membership-list {
 
 // stat boxes on political capital and recruiting pages
 
-.stat-boxes {
-  background: #fff;
-  padding: 20px;
-  .stat-box {
-    box-shadow: 0 0 1px rgba(black, 0.66), inset 0 0 10px rgba(white, 0.1);
-    width: 105px;
-    float: left;
-    text-align: center;
-    color: #4d4d4d;
-    background-color: $bg-stat-box;
-    margin-right: 0;
-    margin-bottom: 10px;
-    min-height: 50px;
-    .stat-box-inner {
-      padding: 6px;
-      min-height: 30px;
-      .stat {
-        margin-top: 0px;
-        font-size: 18px;
-        line-height: 23px;
-        font-weight: 700;
-        &.no-label {
-          padding: 8px;
-        }
-      }
-      .stat-box + .stat-box {
-        background: #000;
-        border-left: none;
-      }
-    }
-    .label {
-      font-size: 0.8em;
-      line-height: 1.1em;
-      white-space: nowrap;
-    }
-  }
+.stat-boxes
+{
+	background: #fff;
+	padding: 20px;
+
+	.stat-box
+	{
+		box-shadow: 0 0 1px rgba(black, 0.66), inset 0 0 10px rgba(white, 0.1);
+		width: 105px;
+		float: left;
+		text-align: center;
+		color: #4d4d4d;
+		background-color: $bg-stat-box;
+		margin-right: 0;
+		margin-bottom: 10px;
+		min-height: 50px;
+
+		.stat-box-inner 
+		{
+			padding: 6px;
+			min-height: 30px;
+
+			.stat
+			{
+				margin-top: 0px;
+				font-size: 18px;
+				line-height: 23px;
+				font-weight: 700;
+
+				&.no-label 
+				{
+					padding: 8px;
+				}
+			}
+			
+			.stat-box + .stat-box 
+			{
+				background: #000;
+				border-left: none;
+			}
+		}
+		
+		.label 
+		{
+			font-size: 0.8em;
+			line-height: 1.1em;
+			white-space: nowrap;
+		}
+	}
 }
 
-.page-pages-show-recruiting #stream {
-  background: $bg-activities;
-  padding: 20px;
-  padding-top: 0;
-  color:$color-activities;
+.page-pages-show-recruiting #stream
+{
+	background: $bg-activities;
+	padding: 20px;
+	padding-top: 0;
+	color:$color-activities;
 }
 
-.page-pages-show-recruiting .content-list {
-  background: #fff;
-  padding: 20px;
+.page-pages-show-recruiting .content-list 
+{
+	background: #fff;
+	padding: 20px;
 }
 
-.content-list .linked-signup-name { color: $link-signup-name-color; }
+.content-list .linked-signup-name
+{
+	color: $link-signup-name-color;
+}
 
 // answers on faq pages
 
-.answer-wrap {
-  @include border-radius(2px);
-  background-color: $bg-answer-wrap;
-  padding: 15px;
-  width: 100%;
-  p:first-child {
-      margin: 0;
-    }
-    .answer-a {
-      float: left;
-      width: 25px;
-      font-weight: bold;
-    }
-    .answer {
-      float: left;
-      width: 91%;
-      > p { margin:0 !important; }
-    }
-    .official-response {
-      font-weight: bold;
-    }
+.answer-wrap
+{
+	@include border-radius(2px);
+	background-color: $bg-answer-wrap;
+	padding: 15px;
+	width: 100%;
+	
+	p:first-child
+	{
+		margin: 0;
+	}
+	
+	.answer-a
+	{
+		float: left;
+		width: 25px;
+		font-weight: bold;
+	}
+
+	.answer
+	{
+		float: left;
+		width: 91%;
+		> p
+		{
+			margin:0 !important;
+		}
+	}
+	
+	.official-response
+	{
+		font-weight: bold;
+	}
 }
 
-.answer {
-  .icon-up-dir:before {
-      margin: 0;
-      font-size: 20px;
-      line-height: 7px;
-      padding: 5px 0 0 40px;
-      color: #ccc;
-      display: block;
-      vertical-align: bottom;
-      text-shadow: none
-    }
-    .linked-signup-name { color: $theme-color-1 }
+.answer
+{
+	.icon-up-dir:before
+	{
+		margin: 0;
+		font-size: 20px;
+		line-height: 7px;
+		padding: 5px 0 0 40px;
+		color: #ccc;
+		display: block;
+		vertical-align: bottom;
+		text-shadow: none
+	}
+	
+	.linked-signup-name
+	{
+		color: $theme-color-1;
+	}
 }
 
 // list of questions on faq pages
 
-.question-list {
-  background: $bg-activities;
-  font-size: 20px;
-  padding: 1em;
-  margin: 0;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  ul, li {
-    list-style: none;
-    margin: 0;
-    padding: 10px 0;
-    border-bottom: 1px dashed #fff;
-  }
+.question-list
+{
+	background: $bg-activities;
+	font-size: 20px;
+	padding: 1em;
+	margin: 0;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	
+	ul,
+	li 
+	{
+		list-style: none;
+		margin: 0;
+		padding: 10px 0;
+		border-bottom: 1px dashed #fff;
+	}
 }
 
-.left-column-narrow {
-  .question-list {
-    border-bottom: none;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
+.left-column-narrow
+{
+	.question-list
+	{
+		border-bottom: none;
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
 }
 
-.faq .excerpt {
-  padding-bottom: 10px;
-  margin-bottom: 10px;
-  margin-top: 0 !important;
+.faq .excerpt
+{
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	margin-top: 0 !important;
 }
 
 // share box which appears after a user submits an action
